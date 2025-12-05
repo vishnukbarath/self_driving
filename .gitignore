@@ -1,0 +1,176 @@
+# ============================================
+# Autonomous Driving Project - .gitignore
+# ============================================
+
+# ============================================
+# DATASETS - DON'T PUSH LARGE DATA FILES
+# ============================================
+# BDD100K dataset (very large)
+data/
+**/bdd100k/
+**/bdd100k_labels_release/
+**/bdd100k_seg/
+
+# YOLO converted dataset
+object_detection/bdd100k_yolo/
+
+# Any other dataset folders
+datasets/
+*.zip
+*.tar
+*.tar.gz
+
+# ============================================
+# TRAINED MODELS - TOO LARGE FOR GITHUB
+# ============================================
+# Model weights and checkpoints
+*.pt
+*.pth
+*.onnx
+*.engine
+*.trt
+*.weights
+*.h5
+*.pb
+*.mlmodel
+
+# Model training outputs
+**/models/
+**/runs/
+**/weights/
+**/checkpoints/
+
+# ============================================
+# PYTHON
+# ============================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb
+
+# ============================================
+# TRAINING LOGS AND OUTPUTS
+# ============================================
+# Tensorboard logs
+**/logs/
+**/lightning_logs/
+events.out.tfevents.*
+
+# Wandb (Weights & Biases)
+wandb/
+*.wandb
+
+# MLflow
+mlruns/
+
+# Training results
+results/
+**/results.csv
+**/results.txt
+
+# Plots and visualizations
+**/plots/
+*.png
+*.jpg
+*.jpeg
+*.gif
+!**/sample_images/*.jpg
+!**/sample_images/*.png
+
+# ============================================
+# ULTRALYTICS YOLO SPECIFIC
+# ============================================
+# YOLO cache files
+*.cache
+
+# YOLO training artifacts
+**/*_batch*.jpg
+**/train_batch*.jpg
+**/val_batch*.jpg
+
+# ============================================
+# SYSTEM FILES
+# ============================================
+# Windows
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# MacOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ============================================
+# TEMPORARY FILES
+# ============================================
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ============================================
+# SECRETS AND CONFIGS
+# ============================================
+.env
+.env.local
+*.key
+*.pem
+config/secrets.yaml
+
+# ============================================
+# KEEP THESE (exceptions to above rules)
+# ============================================
+# Keep sample images
+!sample_images/
+!examples/
+
+# Keep small example models (if any)
+!**/example_model.pt
+
+# Keep README images
+!assets/*.png
+!assets/*.jpg
